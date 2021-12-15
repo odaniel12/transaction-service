@@ -1,6 +1,6 @@
-package com.nttdata.transactionservice.repository;
+package com.nttdata.transaction.repository;
 
-import com.nttdata.transactionservice.model.Transaction;
+import com.nttdata.transaction.model.Transaction;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
 

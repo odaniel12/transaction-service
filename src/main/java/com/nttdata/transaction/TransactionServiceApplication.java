@@ -1,4 +1,4 @@
-package com.nttdata.transactionservice;
+package com.nttdata.transaction;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

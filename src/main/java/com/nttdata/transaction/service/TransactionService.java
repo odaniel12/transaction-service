@@ -1,6 +1,6 @@
-package com.nttdata.transactionservice.service;
+package com.nttdata.transaction.service;
 
-import com.nttdata.transactionservice.model.Transaction;
+import com.nttdata.transaction.model.Transaction;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

@@ -1,4 +1,4 @@
-package com.nttdata.transactionservice.model;
+package com.nttdata.transaction.model;
 
 import lombok.Data;
 

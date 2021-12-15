@@ -1,4 +1,4 @@
-package com.nttdata.transactionservice.utils;
+package com.nttdata.transaction.utils;
 
 public class Constant {
 

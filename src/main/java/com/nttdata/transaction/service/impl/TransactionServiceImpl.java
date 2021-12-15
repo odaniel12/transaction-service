@@ -1,15 +1,18 @@
-package com.nttdata.transactionservice.service.impl;
+package com.nttdata.transaction.service.impl;
 
-import com.nttdata.transactionservice.model.Product;
-import com.nttdata.transactionservice.model.Transaction;
-import com.nttdata.transactionservice.repository.TransactionRepository;
-import com.nttdata.transactionservice.service.TransactionService;
-import com.nttdata.transactionservice.utils.Constant;
+import com.nttdata.transaction.model.Product;
+import com.nttdata.transaction.model.Transaction;
+import com.nttdata.transaction.repository.TransactionRepository;
+import com.nttdata.transaction.service.TransactionService;
+import com.nttdata.transaction.utils.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.util.Calendar;
+import java.util.Date;
 
 @Service
 public class TransactionServiceImpl implements TransactionService {
@@ -27,6 +30,12 @@ public class TransactionServiceImpl implements TransactionService {
         if (transaction.getProductOriginId().equals(transaction.getProductDestinationId()) && transaction.getTransactionType().equals(Constant.TYPE_TRANSACTION_TRANSFER)) {
             return Mono.error(new Exception("Las cuentas de origen y destino no pueden ser las mismas"));
 	}
+		Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+        Date tempDate = cal.getTime();
+        cal.set(Calendar.HOUR, cal.get(Calendar.HOUR) - 5);
+        tempDate = cal.getTime();
+        transaction.setRegistrationDate(tempDate);
 
 	return findProductById(transaction.getProductOriginId())
 			.flatMap(prodOrigin -> {

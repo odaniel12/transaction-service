@@ -1,7 +1,7 @@
-package com.nttdata.transactionservice.controller;
+package com.nttdata.transaction.controller;
 
-import com.nttdata.transactionservice.model.Transaction;
-import com.nttdata.transactionservice.service.TransactionService;
+import com.nttdata.transaction.model.Transaction;
+import com.nttdata.transaction.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
